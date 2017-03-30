@@ -1,0 +1,30 @@
+﻿@model ITSUPPORTTICKETSYSTEM.Areas.Admin.ViewModels.LayoutSidebar
+
+@{
+    Layout = null;
+}
+
+@if (Model.Tags.Any())
+{
+    var maxTicketsInTag = Model.Tags.Max(t => t.TicketCount);
+
+    <div class="panel panel-info tags">
+        <div class="panel-heading">Number of Tickets per Tag</div>
+        <div class="panel-body">
+            <div class="list-group">
+                @foreach (var tag in Model.Tags)
+                {
+                    var percent = Math.Ceiling((float) tag.TicketCount/maxTicketsInTag*100);
+
+                    <a href="@Url.RouteUrl("Tag", new {tag.Id, tag.Slug})" class="list-group-item">
+                        <span class="name">@tag.Name</span>
+                        <span class="badge">@tag.TicketCount</span>
+                        <span class="progress">
+                            <span class="progress-bar progress-bar-info" style="width: @percent%"></span>
+                        </span>
+                    </a>
+                }
+            </div>
+        </div>
+    </div>
+}

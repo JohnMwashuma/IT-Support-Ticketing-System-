@@ -1,0 +1,122 @@
+﻿@model ITSUPPORTTICKETSYSTEM.Areas.Admin.ViewModels.UsersIndex
+@{
+    ViewBag.Title = "Users";
+}
+
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-success">
+        You have Sucessfully @TempData["Message"].ToString()
+    </div>
+}
+
+<div id="content">
+    <header class="clearfix">
+        <div class="ticket-pagination  pull-right ">
+            @if (Model.Users.HasPreviousPage)
+            {
+                <a href="@Url.Action("Index", new { page = Model.Users.PreviousPage })" class="btn btn-primary btn-sm">
+                    <i class="glyphicon glyphicon-chevron-left"></i> Previous Page
+                </a>
+            }
+            else
+            {
+                <a href="#" class="btn btn-default btn-disabled btn-sm">
+                    <i class="glyphicon glyphicon-chevron-left"></i> Previous Page
+                </a>
+            }
+            @if (Model.Users.HasNextPage)
+            {
+                <a href="@Url.Action("Index", new { page = Model.Users.NextPage })" class="btn btn-primary btn-sm">
+                    Next Page<i class="glyphicon glyphicon-chevron-right"></i>
+                </a>
+            }
+            else
+            {
+                <a href="#" class="btn btn-default btn-disabled btn-sm">
+                    Next Page <i class="glyphicon glyphicon-chevron-right"></i>
+                </a>
+            }
+        </div>
+
+        <h1 class="page_title ">
+            <a href="@Url.Action("new")" class="btn btn-primary btn-sm"><i class="glyphicon glyphicon-plus"></i>Create new User</a>
+        </h1>
+
+    </header>
+
+    <div class="content-inner">
+
+        @using (Html.BeginForm("Index", "Users", FormMethod.Get))
+        {
+            <div class="row search-row">
+                <div class="col-md-12">
+                    <b>Search by: </b>@Html.RadioButton("searchBy", "Username")<text>User Name</text>
+                    @Html.RadioButton("searchBy", "Email")<text>Email</text><br />
+                    <div class="input-group">
+                        @Html.TextBox("search", null, new { @class = "form-control search-field", @placeholder = "Search", @type = "search" })
+                        @*<input type="search" class="form-control search-field" placeholder="Search"/>*@
+                        <span class="input-group-btn">
+                            <button type="submit" class="btn btn-primary go" value="Search">Go!</button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        }
+
+        <div class="pull-right export-to">
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary btn-sm">Export To</button>
+                <button type="button" class="btn btn-primary dropdown-toggle btn-sm" data-toggle="dropdown"><span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li>@Html.ActionLink("Excel", "ExportTo", new { ReportType = "Excel" })</li>
+                    <li>@Html.ActionLink("PDF", "ExportTo", new { ReportType = "PDF" })</li>
+                </ul>
+            </div>
+        </div>
+
+        <table class="table table-striped table-hover table-outer">
+            <thead>
+                <tr class="headings">
+                    <th class="column-title">Username</th>
+                    <th class="column-title">Email</th>
+                    <th class="column-title">Roles</th>
+                    <th class="column-title">Departments</th>
+                    <th class="column-title">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            @if (!Model.Users.Any())
+            {
+                <tr>
+                    <td colspan="5">
+                        No record found
+                    </td>
+                </tr>
+            }
+            else
+            {
+                foreach (var user in Model.Users)
+                {
+                    <tr>
+                        <td>@user.Username</td>
+                        <td>@user.Email</td>
+                        <td>@string.Join(", ", user.Roles.Select(role => role.Name))</td>
+                        <td>@string.Join(", ", user.Departments.Select(department => department.Name))</td>
+
+                        <td>
+                            <div class="btn-group">
+                                <a href="@Url.Action("edit", new {user.Id})" class="btn btn-xs btn-primary"><i class="glyphicon glyphicon-edit"></i>Edit</a>
+                                <a href="@Url.Action("resetpassword", new {user.Id})" class="btn btn-xs btn-default"><i class="glyphicon glyphicon-lock"></i>Reset Password</a>
+                                <a href="@Url.Action("delete", new {user.Id})" class="btn btn-xs btn-danger" data-post="Are you sure you want to delete @user.Username"><i class="glyphicon glyphicon-remove"></i>Delete</a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            }
+            </tbody>
+        </table>
+
+    </div>
+    </div>

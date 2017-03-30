@@ -1,0 +1,129 @@
+﻿@model ITSUPPORTTICKETSYSTEM.Areas.Admin.ViewModels.Tagsform
+
+<div id="content">
+    <header class="clearfix">
+        <div class="ticket-pagination  pull-right ">
+            @if (Model.Tagz.HasPreviousPage)
+            {
+                <a href="@Url.Action("Index", new {page = Model.Tagz.PreviousPage})" class="btn btn-primary btn-sm">
+                    <i class="glyphicon glyphicon-chevron-left"></i> Previous Page
+                </a>
+            }
+            else
+            {
+                <a href="#" class="btn btn-default btn-disabled btn-sm">
+                    <i class="glyphicon glyphicon-chevron-left"></i> Previous Page
+                </a>
+            }
+            @if (Model.Tagz.HasNextPage)
+            {
+                <a href="@Url.Action("Index", new {page = Model.Tagz.NextPage})" class="btn btn-primary btn-sm">
+                    Next Page<i class="glyphicon glyphicon-chevron-right"></i>
+                </a>
+            }
+            else
+            {
+                <a href="#" class="btn btn-default btn-disabled btn-sm">
+                    Next Page <i class="glyphicon glyphicon-chevron-right"></i>
+                </a>
+            }
+        </div>
+
+        <div class="tags_title">
+            <h1 class="page_title ">
+                All Tickets Tags
+            </h1>
+        </div>
+    </header>
+
+    <div class="content-inner">
+
+        @using (Html.BeginForm("Index", "Tags", FormMethod.Get))
+        {
+            <div class="row search-row">
+                <div class="col-md-12">
+                    <b>Search by: </b>@Html.RadioButton("searchBy", "Title")<text>Title</text>
+                    @Html.RadioButton("searchBy", "Username")<text>User Name</text><br />
+                    <div class="input-group">
+                        @Html.TextBox("search", null, new { @class = "form-control search-field", @placeholder = "Search", @type = "search" })
+                        @*<input type="search" class="form-control search-field" placeholder="Search"/>*@
+                        <span class="input-group-btn">
+                            <button type="submit" class="btn btn-primary go" value="Search">Go!</button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        }
+
+        <div class="row">
+            <div class="col-md-4 dashboard-left-cell">
+                <div class="admin-content-con">
+                    <header>
+                        <h5>Create tags</h5>
+                    </header>
+                    @Html.Partial("_tag_form")
+                  
+                </div>
+            </div>
+
+            <div class="col-md-8 dashboard-right-cell">
+                <div class="admin-content-con">
+                    <header>
+                        <h5>Tags</h5>
+                    </header>
+
+                    <table class="table table-striped table-hover table-outer">
+                        <thead>
+                            <tr class="headings">
+                                <th class="column-title">Name</th>
+                                <th class="column-title">Status</th>
+                                <th class="column-title">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        @if (!Model.Tagz.Any())
+                        {
+                            <tr>
+                                <td colspan="5">
+                                    No record found
+                                </td>
+                            </tr>
+                        }
+                        else
+                        {
+                            foreach (var tag in Model.Tagz)
+                            {
+                                var cls = "";
+                                if (tag.IsDeleted)
+                                {
+                                    cls = "danger";
+                                }
+                                <tr class="@cls">
+                                    <td>@tag.Name</td>
+                                    <td><span class="label label-success">in use</span></td>
+                                    <td>
+
+                                        <a href="@Url.Action("edit", new {tag.Id})" class="btn btn-xs btn-primary">
+                                            <i class="glyphicon glyphicon-edit"></i>edit
+                                        </a>
+
+                                        <a href="@Url.Action("delete", new {tag.Id})" class="btn btn-xs btn-danger" data-post="Are you sure you want to delete this tag FOREVER?">
+                                            <i class="glyphicon glyphicon-remove"></i> delete
+                                        </a>
+
+                                    </td>
+                                </tr>
+                            }
+                        }
+                        </tbody>
+                    </table>
+
+
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,736 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{52F3A85E-F8D7-4C74-9D04-28DA209F88EA}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ITSUPPORTTICKETSYSTEM</RootNamespace>
+    <AssemblyName>ITSUPPORTTICKETSYSTEM</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
+    <NuGetPackageImportStamp>eab04afb</NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="BCrypt.Net, Version=0.1.5073.29922, Culture=neutral, PublicKeyToken=6bcd409ee6bc9292, processorArchitecture=MSIL">
+      <HintPath>..\packages\BCrypt-Official.0.1.109\lib\BCrypt.Net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.5\lib\DocumentFormat.OpenXml.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ExporterObjects, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Exporter.1.0.2\lib\ExporterObjects.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FluentMigrator, Version=1.6.0.0, Culture=neutral, PublicKeyToken=aacfc7de5acabf05, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentMigrator.1.6.0\lib\40\FluentMigrator.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Iesi.Collections, Version=4.0.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Iesi.Collections.4.0.0.4000\lib\net40\Iesi.Collections.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="iTextSharp, Version=4.1.6.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca">
+      <HintPath>..\packages\iTextSharp-LGPL.4.1.6\lib\iTextSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="JetBrains.Annotations, Version=9.0.0.0, Culture=neutral, PublicKeyToken=dee44e73c0c62b04, processorArchitecture=MSIL">
+      <HintPath>..\packages\Twia.ReSharper.9.0.0\lib\net40\JetBrains.Annotations.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.WebForms.10.0.40219.1\lib\Microsoft.ReportViewer.WebForms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.5.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NHibernate, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\packages\NHibernate.4.0.4.4000\lib\net40\NHibernate.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc.FixedDisplayModes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.FixedDisplayModes.1.0.0\lib\net40\Microsoft.Web.Mvc.FixedDisplayModes.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.30506.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.30506.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.30506.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.30506.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebGrease, Version=1.5.2.14234, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Westwind.RazorHosting, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Westwind.RazorHosting.1.01\lib\net40\Westwind.RazorHosting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xtensive.Orm, Version=5.1.0.0, Culture=neutral, PublicKeyToken=93a6c53d77a5296c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xtensive.Orm.5.1.0-Beta-1\Lib\Net45\Xtensive.Orm.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xtensive.Orm.SqlServerCe, Version=5.1.0.0, Culture=neutral, PublicKeyToken=93a6c53d77a5296c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xtensive.Orm.SqlServerCe.5.1.0-Beta-1\Lib\Net45\Xtensive.Orm.SqlServerCe.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AllTicketsDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AllTicketsDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="allticketsupport.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>allticketsupport.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\ClosedTicketsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\CommentsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\DashboardController.cs" />
+    <Compile Include="Areas\Admin\Controllers\DepartmentController.cs" />
+    <Compile Include="Areas\Admin\Controllers\LayoutController.cs" />
+    <Compile Include="Areas\Admin\Controllers\NewTicketsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\OpenTicketsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\PendingTicketsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ResolvedTicketsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\RolesController.cs" />
+    <Compile Include="Areas\Admin\Controllers\TagsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\TicketCommentsController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Areas\Admin\Controllers\TicketsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\UsersController.cs" />
+    <Content Include="Areas\Admin\Scripts\priorityeditor.js" />
+    <Compile Include="Areas\Admin\ViewModels\ClosedTickets.cs" />
+    <Compile Include="Areas\Admin\ViewModels\Comments.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Areas\Admin\ViewModels\Departments.cs" />
+    <Compile Include="Areas\Admin\ViewModels\Layout.cs" />
+    <Compile Include="Areas\Admin\ViewModels\NewTickets.cs" />
+    <Compile Include="Areas\Admin\ViewModels\OpenTickets.cs" />
+    <Compile Include="Areas\Admin\ViewModels\PendingTickets.cs" />
+    <Compile Include="Areas\Admin\ViewModels\ResolvedTickets.cs" />
+    <Compile Include="Areas\Admin\ViewModels\Roles.cs" />
+    <Compile Include="Areas\Admin\ViewModels\Tags.cs" />
+    <Compile Include="Areas\Admin\ViewModels\TicketComment.cs" />
+    <Compile Include="Areas\Admin\ViewModels\Tickets.cs" />
+    <Compile Include="Areas\Admin\ViewModels\Users.cs" />
+    <Compile Include="Auth.cs" />
+    <Compile Include="Controllers\AuthController.cs" />
+    <Compile Include="Controllers\SupportHomeController.cs" />
+    <Compile Include="Database.cs" />
+    <Compile Include="DataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\Extensions\StringExtensions.cs" />
+    <Compile Include="Infrastructure\PagedData.cs" />
+    <Compile Include="Infrastructure\RoleProvider.cs" />
+    <Compile Include="Infrastructure\SelectedTabAttribute.cs" />
+    <Compile Include="Infrastructure\TransactionFilter.cs" />
+    <Compile Include="Migrations\_001_UserAndRoles.cs" />
+    <Compile Include="Migrations\_002_TicketsAndTags.cs" />
+    <Compile Include="Migrations\_007_Role_add_created_at.cs" />
+    <Compile Include="Migrations\_008_Department_add_created_at.cs" />
+    <Compile Include="Migrations\_009_Add_deleted_at_comments.cs" />
+    <Compile Include="Models\Department.cs" />
+    <Compile Include="Models\Tag.cs" />
+    <Compile Include="Models\Ticket.cs" />
+    <Compile Include="Models\Role.cs" />
+    <Compile Include="Models\TicketComment.cs" />
+    <Compile Include="Models\Priority.cs" />
+    <Compile Include="Models\TicketStatus.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="TICKETINGSYSTEMDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TICKETINGSYSTEMDBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TicketsInfoDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TicketsInfoDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Tickets_All.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Tickets_All.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\Auth.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="Areas\Admin\Scripts\bootstrap-progressbar.min.js" />
+    <Content Include="Areas\Admin\Scripts\classie.js" />
+    <Content Include="Areas\Admin\Scripts\CommentEditor.js" />
+    <Content Include="Areas\Admin\Scripts\easypiechart.min.js" />
+    <Content Include="Areas\Admin\Scripts\king-chart-stat.js" />
+    <Content Include="Content\Images\favicon.ico" />
+    <Content Include="Content\Images\logo%402x.png" />
+    <Content Include="Content\Images\logo.png" />
+    <Content Include="Content\Images\logo1.png" />
+    <Content Include="Content\Styles\entypo.css" />
+    <Content Include="Content\Styles\fonts.googleapis.css" />
+    <Content Include="Content\Styles\jquery-ui-1.10.3.custom.min.css" />
+    <Content Include="Content\Styles\main.css" />
+    <Content Include="Content\Styles\neon-core.css" />
+    <Content Include="Content\Styles\neon-forms.css" />
+    <Content Include="Content\Styles\neon-theme.css" />
+    <Content Include="Content\Styles\portal_print.css" />
+    <Content Include="Content\Styles\portal_utils.css" />
+    <Content Include="Content\Styles\theme.css" />
+    <Content Include="readme_exporter.txt" />
+    <Content Include="Reports\SupportReports\SupportReports.sln" />
+    <Content Include="Reports\SupportReports\SupportReports\SupportReports.rptproj.user" />
+    <Content Include="Scripts\Appjs\phone.js" />
+    <Content Include="Scripts\cookies.min.js" />
+    <Content Include="Scripts\custom.js" />
+    <Content Include="Areas\Admin\Scripts\Form.js" />
+    <Content Include="Areas\Admin\Scripts\jquery.nicescroll.min.js" />
+    <Content Include="Areas\Admin\Scripts\modernizr.custom.js" />
+    <Content Include="Areas\Admin\Scripts\navigation.js" />
+    <Content Include="Areas\Admin\Scripts\pdsa-wait-message.js" />
+    <Content Include="Areas\Admin\Scripts\sidebarEffects.js" />
+    <Content Include="Areas\Admin\Scripts\TicketEditor.js" />
+    <Content Include="Areas\Admin\Scripts\timeago.js" />
+    <Content Include="Areas\Admin\Scripts\Twitterbootstrapmvc.js" />
+    <Content Include="Areas\Admin\Views\TicketComments\Form.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Areas\Admin\Views\TicketComments\Index.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Areas\Admin\Views\TicketComments\Show.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Content\Fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\Fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\Images\AdobePhotoshopExpress_0b6399aa497e48de9eaf12ef9c9007dd.jpg" />
+    <Content Include="Content\Images\img.jpg" />
+    <Content Include="Content\Images\user.jpg" />
+    <Content Include="Content\Images\user.png" />
+    <Content Include="Content\Styles\Admin.css" />
+    <Content Include="Content\Styles\animate.min.css" />
+    <Content Include="Content\Styles\bootstrap.css" />
+    <Content Include="Content\Styles\custom.css" />
+    <Content Include="Content\Styles\font-awesome.css" />
+    <Content Include="Content\Styles\new_bootstrap.css" />
+    <Content Include="Content\Styles\pdsa-wait-message.css" />
+    <Content Include="Content\Styles\Site.css" />
+    <Content Include="Global.asax" />
+    <Content Include="LICENSE.txt" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Areas\Admin\Views\Tickets\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Users\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Admin\Views\Users\New.cshtml" />
+    <Content Include="Areas\Admin\Views\Users\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Users\ResetPassword.cshtml" />
+    <Content Include="Areas\Admin\Views\Users\_RoleEditor.cshtml" />
+    <Content Include="Areas\Admin\Views\Tickets\Form.cshtml" />
+    <Content Include="Content\Fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\Fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\Fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\Fonts\FontAwesome.otf" />
+    <Content Include="Areas\Admin\Views\OpenTickets\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\OpenTickets\Form.cshtml" />
+    <Content Include="Areas\Admin\Views\ResolvedTickets\Form.cshtml" />
+    <Content Include="Areas\Admin\Views\ResolvedTickets\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\NewTickets\Form.cshtml" />
+    <Content Include="Areas\Admin\Views\NewTickets\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\PendingTickets\Form.cshtml" />
+    <Content Include="Areas\Admin\Views\PendingTickets\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Users\_DepartmentEditor.cshtml" />
+    <Content Include="Areas\Admin\Views\Dashboard\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Dashboard\Form.cshtml" />
+    <Content Include="Areas\Admin\Views\TicketComments\_TicketComments.cshtml" />
+    <Content Include="Areas\Admin\Views\TicketComments\_TicketComment.cshtml" />
+    <Content Include="Areas\Admin\Views\Dashboard\Show.cshtml" />
+    <Content Include="Areas\Admin\Views\Dashboard\_TicketComment.cshtml" />
+    <Content Include="Areas\Admin\Views\Tickets\Show.cshtml" />
+    <Content Include="Areas\Admin\Views\Tickets\_TicketComment.cshtml" />
+    <Content Include="AllTicketsDataSet2.xsc">
+      <DependentUpon>AllTicketsDataSet2.xsd</DependentUpon>
+    </Content>
+    <None Include="AllTicketsDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AllTicketsDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="AllTicketsDataSet2.xss">
+      <DependentUpon>AllTicketsDataSet2.xsd</DependentUpon>
+    </Content>
+    <Content Include="Areas\Admin\Views\Layout\Sidebar.cshtml" />
+    <Content Include="Areas\Admin\Views\Tags\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Tags\_tag_form.cshtml" />
+    <Content Include="Areas\Admin\Views\Tickets\_Search.cshtml" />
+    <Content Include="Areas\Admin\Views\ClosedTickets\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ClosedTickets\Form.cshtml" />
+    <Content Include="Areas\Admin\Views\ClosedTickets\Show.cshtml" />
+    <Content Include="Areas\Admin\Views\ClosedTickets\_TicketComment.cshtml" />
+    <Content Include="Areas\Admin\Views\Dashboard\Tag.cshtml" />
+    <Content Include="Areas\Admin\Views\Tickets\Tag.cshtml" />
+    <Content Include="Areas\Admin\Views\Tickets\formmodal.cshtml" />
+    <Content Include="Areas\Admin\Views\Roles\_role_form.cshtml" />
+    <Content Include="Areas\Admin\Views\Roles\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Department\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Department\_department_form.cshtml" />
+    <Content Include="Areas\Admin\Views\Comments\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Comments\_comment_form.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\navigation.cshtml" />
+    <Content Include="DataSet3.xsc">
+      <DependentUpon>DataSet3.xsd</DependentUpon>
+    </Content>
+    <Content Include="allticketsupport.xsc">
+      <DependentUpon>allticketsupport.xsd</DependentUpon>
+    </Content>
+    <None Include="allticketsupport.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>allticketsupport.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="allticketsupport.xss">
+      <DependentUpon>allticketsupport.xsd</DependentUpon>
+    </Content>
+    <None Include="DataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="DataSet3.xss">
+      <DependentUpon>DataSet3.xsd</DependentUpon>
+    </Content>
+    <Content Include="DataSet4.xsc">
+      <DependentUpon>DataSet4.xsd</DependentUpon>
+    </Content>
+    <None Include="DataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="DataSet4.xss">
+      <DependentUpon>DataSet4.xsd</DependentUpon>
+    </Content>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <EmbeddedResource Include="Reports\All Support Tickets.rdlc" />
+    <None Include="Reports\AllSupportTickets.rdl" />
+    <EmbeddedResource Include="Reports\AllTickets.rdlc" />
+    <Content Include="Reports\SupportReports\SupportReports\ALL SUPPORT TICKETS - Backup.rdl" />
+    <Content Include="Reports\SupportReports\SupportReports\ALL SUPPORT TICKETS.rdl" />
+    <Content Include="Reports\SupportReports\SupportReports\ALL SUPPORT TICKETS.rdl.data" />
+    <Content Include="Reports\SupportReports\SupportReports\Alltickets.rds" />
+    <Content Include="Reports\SupportReports\SupportReports\bin\Debug\ALL SUPPORT TICKETS.rdl" />
+    <Content Include="Reports\SupportReports\SupportReports\bin\Debug\Alltickets.rds" />
+    <Content Include="Reports\SupportReports\SupportReports\bin\Debug\build.obj" />
+    <Content Include="Reports\SupportReports\SupportReports\SupportReports.rptproj" />
+    <None Include="Scripts\jquery-2.1.4.intellisense.js" />
+    <Content Include="Scripts\en.js" />
+    <Content Include="Scripts\freshfone_portal.js" />
+    <Content Include="Scripts\joinable.js" />
+    <Content Include="Scripts\jquery-2.1.4.js" />
+    <Content Include="Scripts\jquery-2.1.4.min.js" />
+    <Content Include="Scripts\jquery-2.1.4.min.map" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Areas\Admin\Scripts\jquery.timeago.js" />
+    <Content Include="Scripts\jquery-ui-1.10.3.minimal.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\neon-api.js" />
+    <Content Include="Scripts\neon-custom.js" />
+    <Content Include="Scripts\neon-demo.js" />
+    <Content Include="Scripts\neon-login.js" />
+    <Content Include="Scripts\neon-skins.js" />
+    <Content Include="Scripts\portal_bottom.js" />
+    <Content Include="Scripts\portal_head.js" />
+    <Content Include="Scripts\redactor.js" />
+    <Content Include="Scripts\resizeable.js" />
+    <Content Include="Scripts\summernote\dist\summernote-bs3.css" />
+    <Content Include="Content\Styles\summernote.css" />
+    <Content Include="Scripts\summernote\dist\summernote.js" />
+    <Content Include="Scripts\summernote\dist\summernote.min.js" />
+    <Content Include="Scripts\summernote\examples\airmode.html" />
+    <Content Include="Scripts\summernote\examples\bs2.html" />
+    <Content Include="Scripts\summernote\examples\bs2fa4.html" />
+    <Content Include="Scripts\summernote\examples\bs301fa4.html" />
+    <Content Include="Scripts\summernote\examples\codemirror.html" />
+    <Content Include="Scripts\summernote\examples\external-api.html" />
+    <Content Include="Scripts\summernote\examples\get-button.html" />
+    <Content Include="Scripts\summernote\examples\index.html" />
+    <Content Include="Scripts\summernote\examples\jquery-custom-event.html" />
+    <Content Include="Scripts\summernote\examples\jquery18lt.html" />
+    <Content Include="Scripts\summernote\examples\lang.html" />
+    <Content Include="Scripts\summernote\examples\nativestyle.html" />
+    <Content Include="Scripts\summernote\examples\ondialog-multitab.html" />
+    <Content Include="Scripts\summernote\examples\ondialog.html" />
+    <Content Include="Scripts\summernote\examples\plugin-hello.html" />
+    <Content Include="Scripts\summernote\examples\plugin-hint-emoji.html" />
+    <Content Include="Scripts\summernote\examples\plugin-hint-userdefine.html" />
+    <Content Include="Scripts\summernote\examples\plugin-video.html" />
+    <Content Include="Scripts\summernote\examples\rtl.html" />
+    <Content Include="Scripts\summernote\examples\textarea.html" />
+    <Content Include="Scripts\summernote\Gruntfile.js" />
+    <Content Include="Scripts\summernote\grunts\grunt-build.js" />
+    <Content Include="Scripts\summernote\index.html" />
+    <Content Include="Scripts\summernote\lang\summernote-ar-AR.js" />
+    <Content Include="Scripts\summernote\lang\summernote-bg-BG.js" />
+    <Content Include="Scripts\summernote\lang\summernote-ca-ES.js" />
+    <Content Include="Scripts\summernote\lang\summernote-cs-CZ.js" />
+    <Content Include="Scripts\summernote\lang\summernote-da-DK.js" />
+    <Content Include="Scripts\summernote\lang\summernote-de-DE.js" />
+    <Content Include="Scripts\summernote\lang\summernote-es-ES.js" />
+    <Content Include="Scripts\summernote\lang\summernote-es-EU.js" />
+    <Content Include="Scripts\summernote\lang\summernote-fa-IR.js" />
+    <Content Include="Scripts\summernote\lang\summernote-fi-FI.js" />
+    <Content Include="Scripts\summernote\lang\summernote-fr-FR.js" />
+    <Content Include="Scripts\summernote\lang\summernote-he-IL.js" />
+    <Content Include="Scripts\summernote\lang\summernote-hu-HU.js" />
+    <Content Include="Scripts\summernote\lang\summernote-id-ID.js" />
+    <Content Include="Scripts\summernote\lang\summernote-it-IT.js" />
+    <Content Include="Scripts\summernote\lang\summernote-ja-JP.js" />
+    <Content Include="Scripts\summernote\lang\summernote-ko-KR.js" />
+    <Content Include="Scripts\summernote\lang\summernote-lt-LT.js" />
+    <Content Include="Scripts\summernote\lang\summernote-nb-NO.js" />
+    <Content Include="Scripts\summernote\lang\summernote-nl-NL.js" />
+    <Content Include="Scripts\summernote\lang\summernote-pl-PL.js" />
+    <Content Include="Scripts\summernote\lang\summernote-pt-BR.js" />
+    <Content Include="Scripts\summernote\lang\summernote-pt-PT.js" />
+    <Content Include="Scripts\summernote\lang\summernote-ro-RO.js" />
+    <Content Include="Scripts\summernote\lang\summernote-ru-RU.js" />
+    <Content Include="Scripts\summernote\lang\summernote-sk-SK.js" />
+    <Content Include="Scripts\summernote\lang\summernote-sl-SI.js" />
+    <Content Include="Scripts\summernote\lang\summernote-sr-RS-Latin.js" />
+    <Content Include="Scripts\summernote\lang\summernote-sr-RS.js" />
+    <Content Include="Scripts\summernote\lang\summernote-sv-SE.js" />
+    <Content Include="Scripts\summernote\lang\summernote-th-TH.js" />
+    <Content Include="Scripts\summernote\lang\summernote-tr-TR.js" />
+    <Content Include="Scripts\summernote\lang\summernote-uk-UA.js" />
+    <Content Include="Scripts\summernote\lang\summernote-vi-VN.js" />
+    <Content Include="Scripts\summernote\lang\summernote-zh-CN.js" />
+    <Content Include="Scripts\summernote\lang\summernote-zh-TW.js" />
+    <Content Include="Scripts\summernote\meteor\package-standalone.js" />
+    <Content Include="Scripts\summernote\meteor\package.js" />
+    <Content Include="Scripts\summernote\meteor\test.js" />
+    <Content Include="Scripts\summernote\plugin\summernote-ext-hello.js" />
+    <Content Include="Scripts\summernote\plugin\summernote-ext-hint.js" />
+    <Content Include="Scripts\summernote\plugin\summernote-ext-video.js" />
+    <Content Include="Scripts\summernote\src\js\app.js" />
+    <Content Include="Scripts\summernote\src\js\core\agent.js" />
+    <Content Include="Scripts\summernote\src\js\core\async.js" />
+    <Content Include="Scripts\summernote\src\js\core\dom.js" />
+    <Content Include="Scripts\summernote\src\js\core\func.js" />
+    <Content Include="Scripts\summernote\src\js\core\key.js" />
+    <Content Include="Scripts\summernote\src\js\core\list.js" />
+    <Content Include="Scripts\summernote\src\js\core\range.js" />
+    <Content Include="Scripts\summernote\src\js\defaults.js" />
+    <Content Include="Scripts\summernote\src\js\editing\Bullet.js" />
+    <Content Include="Scripts\summernote\src\js\editing\History.js" />
+    <Content Include="Scripts\summernote\src\js\editing\Style.js" />
+    <Content Include="Scripts\summernote\src\js\editing\Table.js" />
+    <Content Include="Scripts\summernote\src\js\editing\Typing.js" />
+    <Content Include="Scripts\summernote\src\js\EventHandler.js" />
+    <Content Include="Scripts\summernote\src\js\intro.js" />
+    <Content Include="Scripts\summernote\src\js\module\Button.js" />
+    <Content Include="Scripts\summernote\src\js\module\Clipboard.js" />
+    <Content Include="Scripts\summernote\src\js\module\Codeview.js" />
+    <Content Include="Scripts\summernote\src\js\module\DragAndDrop.js" />
+    <Content Include="Scripts\summernote\src\js\module\Editor.js" />
+    <Content Include="Scripts\summernote\src\js\module\Fullscreen.js" />
+    <Content Include="Scripts\summernote\src\js\module\Handle.js" />
+    <Content Include="Scripts\summernote\src\js\module\HelpDialog.js" />
+    <Content Include="Scripts\summernote\src\js\module\ImageDialog.js" />
+    <Content Include="Scripts\summernote\src\js\module\LinkDialog.js" />
+    <Content Include="Scripts\summernote\src\js\module\Popover.js" />
+    <Content Include="Scripts\summernote\src\js\module\Statusbar.js" />
+    <Content Include="Scripts\summernote\src\js\module\Toolbar.js" />
+    <Content Include="Scripts\summernote\src\js\outro.js" />
+    <Content Include="Scripts\summernote\src\js\Renderer.js" />
+    <Content Include="Scripts\summernote\src\js\summernote.js" />
+    <Content Include="Scripts\summernote\test\libs\codemirror.js" />
+    <Content Include="Scripts\summernote\test\libs\jquery-1.9.1.min.js" />
+    <Content Include="Scripts\summernote\test\libs\require.min.js" />
+    <Content Include="Scripts\summernote\test\unit.html" />
+    <Content Include="Scripts\summernote\test\unit.js" />
+    <Content Include="Scripts\summernote\test\unit\dom.spec.js" />
+    <Content Include="Scripts\summernote\test\unit\list.spec.js" />
+    <Content Include="Scripts\summernote\test\unit\range.spec.js" />
+    <Content Include="Scripts\summernote\test\unit\style.spec.js" />
+    <Content Include="Scripts\summernote\themes.html" />
+    <Content Include="Scripts\syntaxhighlighter.js" />
+    <Content Include="Scripts\TweenMax.min.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Tools\DeployDb-Dev.bat" />
+    <Content Include="Scripts\summernote\.gitignore" />
+    <Content Include="Scripts\summernote\.jshintignore" />
+    <Content Include="Scripts\summernote\.jshintrc" />
+    <Content Include="Scripts\summernote\.travis.yml" />
+    <Content Include="Scripts\summernote\bower.json" />
+    <Content Include="Scripts\summernote\composer.json" />
+    <Content Include="Scripts\summernote\CONTRIBUTING.md" />
+    <Content Include="Scripts\summernote\MAINTAIN.md" />
+    <Content Include="Scripts\summernote\meteor\publish.sh" />
+    <Content Include="Scripts\summernote\meteor\README.md" />
+    <Content Include="Scripts\summernote\meteor\runtests.sh" />
+    <Content Include="Scripts\summernote\package.json" />
+    <Content Include="Scripts\summernote\README.md" />
+    <Content Include="Scripts\summernote\src\less\elements.less" />
+    <Content Include="Scripts\summernote\src\less\summernote.less" />
+    <Content Include="Scripts\summernote\src\sass\summernote.scss" />
+    <Content Include="TICKETINGSYSTEMDBDataSet.xsc">
+      <DependentUpon>TICKETINGSYSTEMDBDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="TICKETINGSYSTEMDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TICKETINGSYSTEMDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="TICKETINGSYSTEMDBDataSet.xss">
+      <DependentUpon>TICKETINGSYSTEMDBDataSet.xsd</DependentUpon>
+    </Content>
+    <Content Include="TicketsInfoDataSet.xsc">
+      <DependentUpon>TicketsInfoDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="TicketsInfoDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TicketsInfoDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="TicketsInfoDataSet.xss">
+      <DependentUpon>TicketsInfoDataSet.xsd</DependentUpon>
+    </Content>
+    <Content Include="Tickets_All.xsc">
+      <DependentUpon>Tickets_All.xsd</DependentUpon>
+    </Content>
+    <None Include="Tickets_All.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Tickets_All.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Tickets_All.xss">
+      <DependentUpon>Tickets_All.xsd</DependentUpon>
+    </Content>
+    <Content Include="Views\Auth\Login.cshtml" />
+    <Content Include="Views\SupportHome\_Login.cshtml" />
+    <Content Include="Views\SupportHome\ResetPassword.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SupportHome\Login.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Auth\NewLogin.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\_ViewStart.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\Fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\Fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\Fonts\glyphicons-halflings-regular.woff2" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Reports\SupportTickets.rdlc" />
+    <EmbeddedResource Include="Reports\TicketReport.rdlc" />
+    <EmbeddedResource Include="Reports\Users.rdlc" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1080</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:1065/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="..\packages\Xtensive.Orm.5.1.0-Beta-1\Build\Xtensive.Orm.targets" Condition="Exists('..\packages\Xtensive.Orm.5.1.0-Beta-1\Build\Xtensive.Orm.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Xtensive.Orm.5.1.0-Beta-1\Build\Xtensive.Orm.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xtensive.Orm.5.1.0-Beta-1\Build\Xtensive.Orm.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

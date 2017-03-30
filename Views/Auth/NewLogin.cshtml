@@ -1,0 +1,55 @@
+﻿@model ITSUPPORTTICKETSYSTEM.ViewModels.AuthLogin
+@{
+    ViewBag.Title = "Login";
+}
+
+@*<style>
+        /* Override styles in pdsa-wait-message */
+        .submit-progress {
+            padding-top: 2em;
+            width: 23em;
+            margin-left: -11.5em; /* Set to a negative number that is 1/2 of the width */
+        }
+
+            .submit-progress i {
+                margin-right: 0.5em;
+            }
+    </style>*@
+
+    <div class="container">
+        <div class="row">
+            <div class="form-wrapper panel panel-default col-lg-4 login-center">
+
+                @using (Html.BeginForm())
+                {
+
+                    @*<!-- ** BEGIN WAIT MESSAGES AREA ** -->
+                <div class="submit-progress hide" data-pdsa-show-on-progress="true">
+                  <i class="fa fa-2x fa-spinner fa-spin"></i>
+                  <label>Please wait while we login...</label>
+                </div>
+                <!-- ** END WAIT MESSAGES AREA ** -->*@
+
+
+                    @Html.ValidationSummary()
+                       <div class="form-group">
+                           <h1>Please Login</h1>
+                           </div>
+                    <div class="form-group">
+                        @Html.LabelFor(x => x.Username, new { @class = "sr-only" })
+                        @Html.TextBoxFor(x => x.Username, new { @class = "form-control", @placeholder = "User Name" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(x => x.Password, new { @class = "sr-only" })
+                        @Html.TextBoxFor(x => x.Password, new { @class = "form-control", @placeholder = "Password", @type = "password" })
+                    </div>
+                    <div class="form-group">
+
+                        <input type="submit" class="btn btn-sm btn-primary pull-right " value="Login" @*onclick="return DisplayProgressMessage(this, 'Login in User...'); "*@ />
+                    </div>
+
+                }
+            </div>
+        </div>
+    </div>
+

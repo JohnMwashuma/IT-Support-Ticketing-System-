@@ -1,0 +1,32 @@
+﻿@model ITSUPPORTTICKETSYSTEM.Areas.Admin.ViewModels.TicketCommentform
+
+@using (Html.BeginForm("Index", "Comments"))
+{
+      if (!Model.IsNew)
+    {
+        @Html.HiddenFor(f => f.CommentId)
+
+    }
+    
+    @Html.AntiForgeryToken()
+  
+    
+         @Html.ValidationSummary()
+    <div class="form-group">
+        <label><strong>Add a general comment below</strong></label>
+        <p>
+            @Html.TextAreaFor(f => f.Contents, new { @class = "form-control",@rows="3", @placeholder = "e.g IT Support has received your ticket and its working on it etc.", @id = "name" })
+            @*<textarea class="form-control" rows="3" placeholder="e.g network issues,server issues, user problems"></textarea>*@
+        </p>
+        <p>
+            <input type="submit" value="Create Comment" class="btn btn-primary btn-sm" />
+        </p>
+    </div>
+                       
+}
+
+@section Scripts
+{
+    @Scripts.Render("~/admin/ticket/scripts")
+   
+}

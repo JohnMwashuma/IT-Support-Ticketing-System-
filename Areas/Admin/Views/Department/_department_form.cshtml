@@ -1,0 +1,32 @@
+﻿@model ITSUPPORTTICKETSYSTEM.Areas.Admin.ViewModels.Departmentsform
+
+@using (Html.BeginForm("Index", "Department"))
+{
+      if (!Model.IsNew)
+    {
+        @Html.HiddenFor(f => f.DepartmentId)
+
+    }
+    
+    @Html.AntiForgeryToken()
+  
+    
+         @Html.ValidationSummary()
+    <div class="form-group">
+        <label><strong>Add new user departments below</strong></label>
+        <p>
+            @Html.TextAreaFor(f => f.Name, new { @class = "form-control",@rows="3", @placeholder = "e.g IT Department, Finance Department, Training Department etc.", @id = "name" })
+            @*<textarea class="form-control" rows="3" placeholder="e.g network issues,server issues, user problems"></textarea>*@
+        </p>
+        <p>
+            <input type="submit" value="Create Role" class="btn btn-primary btn-sm" />
+        </p>
+    </div>
+                       
+}
+
+@section Scripts
+{
+    @Scripts.Render("~/admin/ticket/scripts")
+   
+}

@@ -1,0 +1,24 @@
+﻿@model IList<ITSUPPORTTICKETSYSTEM.Areas.Admin.ViewModels.RoleCheckbox>
+
+<div class="panel panel-info">
+    <div class="panel-heading">Roles</div>
+    <div class="panel-body">
+        <ul class="list-group">
+            @for (var i = 0; i < Model.Count; i++)
+            {
+                <li class="list-group-item">
+                    @Html.Hidden("Roles[" + i + "].Id", Model[i].Id)
+                    <label for="Roles_@(i)__IsChecked">
+                        @Html.CheckBox("Roles[" + i + "].IsChecked", Model[i].IsChecked)
+                        @Model[i].Name
+                    </label>
+                </li>
+
+            }
+
+        </ul>
+
+    </div>
+
+</div>
+

@@ -1,0 +1,17 @@
+﻿@model ITSUPPORTTICKETSYSTEM.Areas.Admin.ViewModels.TicketsIndex
+
+@using (Html.BeginForm("Index", "Tickets", FormMethod.Get))
+{
+    <div class="row search-row">
+        <div class="col-md-12">
+            <b>Search by: </b>@Html.RadioButton("searchBy", "Title")<text>Title</text>
+            @Html.RadioButton("searchBy", "Content")<text>Content</text><br />
+            <div class="input-group">
+                <input type="search" class="form-control search-field" placeholder="Search" />
+                <span class="input-group-btn">
+                    <button type="submit" class="btn btn-primary go" value="Search">Go!</button>
+                </span>
+            </div>
+        </div>
+    </div>
+}

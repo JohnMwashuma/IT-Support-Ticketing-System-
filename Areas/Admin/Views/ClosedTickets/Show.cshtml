@@ -1,0 +1,6 @@
+﻿@model ITSUPPORTTICKETSYSTEM.Areas.Admin.ViewModels.TicketsShow
+@{
+    ViewBag.Title = Model.Ticket.Title;
+}
+
+@Html.Partial("_TicketComment", Model.Ticket)

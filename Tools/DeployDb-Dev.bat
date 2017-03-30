@@ -1,0 +1,1 @@
+..\..\packages\fluentmigrator.1.6.0\tools\Migrate.exe --db=SqlServer2014 --target=..\bin\ITSUPPORTTICKETSYSTEM.dll --configpath=..\Web.config -c=Maindb

@@ -1,0 +1,26 @@
+﻿.logoheading {
+    font-family: "Open Sans Condensed",Helvetica,sans-serif;
+    font-weight: bold;
+    color: inherit;
+}
+.field-validation-error{
+    color: red;
+}
+.field-validation-valid{
+    display: none;
+}
+.input-validation-error{
+    border:1px solid red;
+    background-color: #ffeeee;
+}
+.validation-summary-errors{
+    font-weight: bold;
+    color: red;
+}
+#login-btn {
+   margin: 10px;
+}
+.user_name_position {
+    margin-right: 35px;
+     margin-top: 10px;
+}

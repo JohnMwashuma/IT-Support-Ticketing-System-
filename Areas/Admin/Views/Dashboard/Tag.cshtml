@@ -1,0 +1,14 @@
+﻿@model ITSUPPORTTICKETSYSTEM.Areas.Admin.ViewModels.TicketsTag
+           
+@{
+    ViewBag.Title = Model.Tag.Name;
+    }
+
+<div class="panel panel-warning">
+    <div class="panel-heading">
+        Showing tickets tagged with <strong>@Model.Tag.Name</strong>.
+        <a href="@Url.RouteUrl("Dashboard")" class="pull-right">show all</a>
+    </div>
+</div>
+
+@Html.Partial("_TicketComment")

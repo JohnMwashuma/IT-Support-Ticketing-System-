@@ -1,0 +1,259 @@
+﻿@model ITSUPPORTTICKETSYSTEM.ViewModels.AuthLogin
+
+<div class="page">
+
+    <header class="banner">
+        <div class="banner-wrapper">
+            <div class="banner-title">
+                <a href="/support/home" class="portal-logo"><span class="portal-img">
+				<img src="~/content/images/logo1.png" alt="Logo" onerror=" default_image_error(this) " data-type="logo">
+								 </span></a>
+                <h1 class="ellipsis heading">IT SUPPORT</h1>
+            </div>
+            <nav class="banner-nav">
+                <div class="welcome">Welcome <b></b>
+                </div> <b><a href="@Url.RouteUrl("Home")"><b>Login</b></a></b> &nbsp;<b><a href="/support/signup"><b>Sign up</b></a></b>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="page-tabs">
+
+        <a data-toggle-dom="#header-tabs" href="#" data-animated="true" class="mobile-icon-nav-menu show-in-mobile"></a>
+
+        <div class="nav-link" id="header-tabs">
+            <a href="@Url.RouteUrl("home")" class="">Home</a>
+        </div>
+
+    </nav>
+
+    <div class="c-wrapper">
+        <div id="login-page-wrapper">
+            <section id="login-container" class="content-form rounded-6 main" style="min-height: 295px;">
+                
+                <div class="login-form">
+                    <div id="login-form">
+                        <h2 class="logoheading">Login to the support portal</h2>
+                        <p>Enter the details below</p>
+
+                        @using (Html.BeginForm())
+                        {
+                            @Html.ValidationSummary()
+                            <fieldset>
+
+                                <div class="control-group">
+                                    <div class="controls">
+                                        @Html.TextBoxFor(x => x.Username, new {@class = "required special", @autofocus = "true", @placeholder = "Your user name", @size = "30", @type = "text", @autocomplete = "on"})
+                                    </div>
+                                </div>
+
+                                <div class="control-group">
+                                    <div class="controls">
+                                        @Html.TextBoxFor(x => x.Password, new {@class = "special", @autofocus = "true", @placeholder = "Password", @size = "30", @type = "password", @autocomplete = "off"})
+                                    </div>
+                                </div>
+
+                                <div class="control-group">
+                                    <div class="controls">
+                                        <label class="checkbox">
+                                            <input name="user_session[remember_me]" type="hidden" value="0"><input id="user_session_remember_me" name="user_session[remember_me]" type="checkbox" value="1">
+                                            Remember me on this computer
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="control-group">
+                                    <a href="" data-toggle-dom="#forgot-form, #login-form" id="forgot_password">forgot your password?</a>
+                                    <div class="controls">
+                                        <button type="submit" class="btn btn-primary btn-login" value="Login"> Login </button>
+                                    </div>
+                                </div>
+
+                            </fieldset>
+                        }
+                    </div>
+                    @Html.Partial("ResetPassword")
+                </div>
+
+                <div class="alt-login-button">
+                    <h2 class="heading">...or login using</h2>
+                    <a href="/google/login"class="btn btn-google">Google </a>
+                    <a href="/sso/facebook" class="btn btn-facebook">Facebook</a>
+                    <a href="/auth/twitter" class="btn btn-twitter">Twitter</a>
+                </div>
+
+            </section>
+
+            <section id="signup-container" class="sidebar content-form rounded-6" style="min-height: 295px;">
+                <h2 class="heading"><b>Sign up</b>
+                </h2>
+                <p>
+                    <a href="/support/signup" class="btn btn-signup">
+                        Sign up with us
+                    </a>
+                </p>
+                <p class="info-text">
+                    Once you sign up, you will have complete access to our self service portal and you can use your account to raise support tickets and track their status.
+                </p>
+            </section>
+
+        </div>
+    </div>
+
+    <footer class="footer rounded-6">
+        <nav class="footer-links">
+
+            <a href="@Url.RouteUrl("home")" class="">Home</a>
+            <a href="#" target="_blank" class="privacy-link">
+                Privacy Policy
+            </a>
+            <a href="#portal-cookie-info" rel="freshdialog" data-lazy-load="true" class="cookie-link" data-width="450px" title="Why we love Cookies" data-template-footer="">
+                Cookie policy
+            </a>
+
+            <div id="portal-cookie-info" class="hide"><textarea>				&lt;p&gt;We use cookies to try and give you a better experience in ITSUPPORT. &lt;/p&gt;
+				&lt;p&gt;You can learn more about what kind of cookies we use, why, and how from our &lt;a href="#" target="_blank"&gt;Privacy Policy&lt;/a&gt;. If you hate cookies, or are just on a diet, you can disable them altogether too. Just note that the ITSUPPORT service is pretty big on some cookies (we love the choco-chip ones), and some portions of ITSUPPORT may not work properly if you disable cookies. &lt;/p&gt;
+				&lt;p&gt;We’ll also assume you agree to the way we use cookies and are ok with it as described in our &lt;a href="#" target="_blank"&gt;Privacy Policy&lt;/a&gt;, unless you choose to disable them altogether through your browser. &lt;/p&gt;
+			</textarea>
+            </div>
+
+        </nav>
+    </footer>
+
+    <div class="copyright">
+        <a href="#" target="_blank"> Help Desk Software </a>
+        by John Kirigha Mwashuma
+    </div>
+
+</div>
+
+				
+	   
+        
+
+
+@*<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">IT Support Ticketing System : HELP CENTER PORTAL</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">*@
+@*<ul class="nav navbar-nav">
+        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+                <li class="divider"></li>
+                <li><a href="#">One more separated link</a></li>
+            </ul>
+        </li>
+    </ul>*@
+@*<form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>*@
+@*<ul id="login-btn" class="nav navbar-nav navbar-right ">
+                    <a href="@Url.RouteUrl("Login")" class="btn btn-default">
+                        Login<i class="glyphicon glyphicon-log-in"></i>
+                    </a>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-body ">
+                        <div class="col-lg-8">
+                            <ul class="breadcrumb col-lg-10">
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">Library</a></li>
+                                <li class="active">Data</li>
+                            </ul>
+
+                            <div class="jumbotron col-lg-10">
+                                <h3>Submit a Request </h3>
+
+                                <div class="list-group">
+                                    <a href="#" class="list-group-item">
+
+                                        <p class="list-group-item-text lead">Hi there! IT Support is ready to Help you out. Please dont hesitate to Ask for Assitance when you get stuck.</p>
+                                    </a>
+                                </div>
+                                <div class="btn-group open">
+                                    <a href="#" class="btn btn-success">Create a Ticket</a>
+                                    <a href="#" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-expanded="true"><span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Create New Ticket</a></li>
+
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4">
+
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">Your IT Support Team</h3>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="col-sm-2 col-md-1">
+                                        <img class="img-circle hidden-xs " src="~/Content/Images/AdobePhotoshopExpress_0b6399aa497e48de9eaf12ef9c9007dd.jpg"/>
+                                    </div>
+
+                                    <div class="clearfix">
+                                        <div class="pull-right user_name_position">
+                                            <strong>Clemence Chambela</strong>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>*@
+
+@*</div>
+        </div>
+
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <blockquote>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                            <small>Someone famous in <cite title="Source Title">Source Title</cite></small>
+                        </blockquote>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <blockquote class="blockquote-reverse">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                            <small>Someone famous in <cite title="Source Title">Source Title</cite></small>
+                        </blockquote>
+                    </div>
+                    </div>
+            </div>
+        </footer>
+
+    </div>*@

@@ -1,0 +1,56 @@
+﻿@model ITSUPPORTTICKETSYSTEM.Areas.Admin.ViewModels.UsersEdit
+
+
+<div id="content">
+    <header class="clearfix">
+
+        <h1 class="page_title ">
+            Edit User @Model.Username
+        </h1>
+
+    </header>
+
+    <div class="content-inner">
+        <div class="form-wrapper">
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary()
+
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="form-group">
+                            @Html.LabelFor(f => f.Username, new { @class = "sr-only" })
+                            @Html.TextBoxFor(f => f.Username, new { @class = "form-control", @placeholder = "User Name" })
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(f => f.Email, new { @class = "sr-only" })
+                            @Html.TextBoxFor(f => f.Email, new { @class = "form-control", type = "email", @placeholder = "Email" })
+                        </div>
+                       
+                        @Html.Partial("_DepartmentEditor", Model.Departments)
+                    </div>
+                    <div class="col-lg-4">
+
+                        @Html.LabelFor(m => m.ProfilePicture)
+                        @Html.TextBoxFor(m => m.ProfilePicture, new { type = "file" })
+
+                        @Html.Partial("_RoleEditor", Model.Roles)
+                        <div class="panel panel-info">
+                            <div class="panel-heading">User Actions</div>
+                            <div class="panel-body">
+                                <input type="submit" value="Update User" class="btn btn-primary"/>
+                                <a href="@Url.Action("index")">or cancel</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            }
+        </div>
+    </div>
+
+</div>

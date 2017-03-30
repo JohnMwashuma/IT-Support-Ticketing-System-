@@ -1,0 +1,20 @@
+﻿@model ITSUPPORTTICKETSYSTEM.Areas.Admin.ViewModels.TicketCommentsIndex
+
+@if (Model.TicketsData.Any())
+{
+    foreach (var alltickets in Model.TicketsData)
+    {
+  <ul class="collapse collapseable" id="collapse-ticket">
+        <li><a href="@Url.Action("Index", "Tickets")">All Tickets <span class="label label-success pull-right">@alltickets.TicketCount</span></a></li>
+        <li><a href="@Url.Action("Index", "NewTickets")">New Tickets <span class="label label-warning pull-right">5</span></a></li>
+        <li><a href="@Url.Action("Index", "OpenTickets")">Open Tickets <span class="label label-warning pull-right">5</span></a></li>
+        <li><a href="@Url.Action("Index", "PendingTickets")">Pending Tickets <span class="label label-warning pull-right">5</span></a></li>
+        <li><a href="@Url.Action("Index", "ResolvedTickets")">Resolved Tickets <span class="label label-success pull-right">5</span></a></li>
+        @if (User.IsInRole("admin") || User.IsInRole("support"))
+        {
+            <li><a href="@Url.Action("Index", "ClosedTickets")">Closed Tickets <span class="label label-success pull-right">5</span></a></li>
+        }
+    </ul>
+    }
+}
+

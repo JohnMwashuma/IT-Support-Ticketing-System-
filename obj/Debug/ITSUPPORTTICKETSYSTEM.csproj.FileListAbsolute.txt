@@ -1,0 +1,104 @@
+c:\users\jonnyolo\documents\visual studio 2013\Projects\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\ITSUPPORTTICKETSYSTEM.dll.config
+c:\users\jonnyolo\documents\visual studio 2013\Projects\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\ITSUPPORTTICKETSYSTEM.dll
+c:\users\jonnyolo\documents\visual studio 2013\Projects\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\ITSUPPORTTICKETSYSTEM.pdb
+c:\users\jonnyolo\documents\visual studio 2013\Projects\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\Microsoft.Web.Infrastructure.dll
+c:\users\jonnyolo\documents\visual studio 2013\Projects\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+c:\users\jonnyolo\documents\visual studio 2013\Projects\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\Newtonsoft.Json.dll
+c:\users\jonnyolo\documents\visual studio 2013\Projects\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\System.Web.Helpers.dll
+c:\users\jonnyolo\documents\visual studio 2013\Projects\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\System.Web.Mvc.dll
+c:\users\jonnyolo\documents\visual studio 2013\Projects\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\System.Web.Razor.dll
+c:\users\jonnyolo\documents\visual studio 2013\Projects\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\System.Web.WebPages.Deployment.dll
+c:\users\jonnyolo\documents\visual studio 2013\Projects\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\System.Web.WebPages.dll
+c:\users\jonnyolo\documents\visual studio 2013\Projects\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\System.Web.WebPages.Razor.dll
+c:\users\jonnyolo\documents\visual studio 2013\Projects\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\Newtonsoft.Json.xml
+c:\users\jonnyolo\documents\visual studio 2013\Projects\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\System.Web.Helpers.xml
+c:\users\jonnyolo\documents\visual studio 2013\Projects\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\System.Web.Mvc.xml
+c:\users\jonnyolo\documents\visual studio 2013\Projects\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\System.Web.Razor.xml
+c:\users\jonnyolo\documents\visual studio 2013\Projects\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\System.Web.WebPages.xml
+c:\users\jonnyolo\documents\visual studio 2013\Projects\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\System.Web.WebPages.Deployment.xml
+c:\users\jonnyolo\documents\visual studio 2013\Projects\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\System.Web.WebPages.Razor.xml
+c:\users\jonnyolo\documents\visual studio 2013\Projects\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\obj\Debug\ITSUPPORTTICKETSYSTEM.dll
+c:\users\jonnyolo\documents\visual studio 2013\Projects\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\obj\Debug\ITSUPPORTTICKETSYSTEM.pdb
+C:\Users\Jonnyolo\documents\visual studio 2013\Projects\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\Antlr3.Runtime.dll
+C:\Users\Jonnyolo\documents\visual studio 2013\Projects\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\JetBrains.Annotations.dll
+C:\Users\Jonnyolo\documents\visual studio 2013\Projects\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\System.Web.Optimization.dll
+C:\Users\Jonnyolo\documents\visual studio 2013\Projects\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\WebGrease.dll
+C:\Users\Jonnyolo\documents\visual studio 2013\Projects\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\Antlr3.Runtime.pdb
+C:\Users\Jonnyolo\documents\visual studio 2013\Projects\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\JetBrains.Annotations.xml
+C:\Users\Jonnyolo\documents\visual studio 2013\Projects\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\System.Web.Optimization.xml
+C:\Users\Jonnyolo\documents\visual studio 2013\Projects\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\FluentMigrator.dll
+C:\Users\Jonnyolo\documents\visual studio 2013\Projects\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\FluentMigrator.pdb
+C:\Users\Jonnyolo\documents\visual studio 2013\Projects\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\FluentMigrator.xml
+C:\Users\Jonnyolo\documents\visual studio 2013\Projects\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\Iesi.Collections.dll
+C:\Users\Jonnyolo\documents\visual studio 2013\Projects\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\NHibernate.dll
+C:\Users\Jonnyolo\documents\visual studio 2013\Projects\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\Iesi.Collections.xml
+C:\Users\Jonnyolo\documents\visual studio 2013\Projects\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\NHibernate.xml
+C:\Users\Jonnyolo\documents\visual studio 2013\Projects\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\Xtensive.Orm.dll
+C:\Users\Jonnyolo\documents\visual studio 2013\Projects\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\Xtensive.Orm.SqlServerCe.dll
+C:\Users\Jonnyolo\documents\visual studio 2013\Projects\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\Xtensive.Orm.xml
+C:\Users\Jonnyolo\documents\visual studio 2013\Projects\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\Xtensive.Orm.SqlServerCe.xml
+C:\Users\Jonnyolo\documents\visual studio 2013\Projects\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\BCrypt.Net.dll
+C:\Users\Jonnyolo\documents\visual studio 2013\Projects\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\BCrypt.Net.pdb
+C:\Users\Jonnyolo\documents\visual studio 2013\Projects\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\BCrypt.Net.xml
+C:\Users\Jonnyolo\documents\visual studio 2013\Projects\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\obj\Debug\RdlCompile.cache
+C:\Users\Jonnyolo\documents\visual studio 2013\Projects\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\obj\Debug\RdlCompile.compiled
+C:\Users\Jonnyolo\documents\visual studio 2013\Projects\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\Microsoft.ReportViewer.Common.dll
+C:\Users\Jonnyolo\documents\visual studio 2013\Projects\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\Microsoft.ReportViewer.DataVisualization.dll
+C:\Users\Jonnyolo\documents\visual studio 2013\Projects\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\Users\Jonnyolo\documents\visual studio 2013\Projects\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\Microsoft.ReportViewer.WebForms.dll
+C:\Users\Jonnyolo\documents\visual studio 2013\Projects\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\obj\Debug\ITSUPPORTTICKETSYSTEM.csprojResolveAssemblyReference.cache
+D:\--Important-Docs--\prjct\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\ITSUPPORTTICKETSYSTEM.dll.config
+D:\--Important-Docs--\prjct\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\ITSUPPORTTICKETSYSTEM.dll
+D:\--Important-Docs--\prjct\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\ITSUPPORTTICKETSYSTEM.pdb
+D:\--Important-Docs--\prjct\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\Antlr3.Runtime.dll
+D:\--Important-Docs--\prjct\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\BCrypt.Net.dll
+D:\--Important-Docs--\prjct\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\FluentMigrator.dll
+D:\--Important-Docs--\prjct\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\Iesi.Collections.dll
+D:\--Important-Docs--\prjct\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\JetBrains.Annotations.dll
+D:\--Important-Docs--\prjct\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\Microsoft.ReportViewer.Common.dll
+D:\--Important-Docs--\prjct\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\Microsoft.ReportViewer.DataVisualization.dll
+D:\--Important-Docs--\prjct\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\Microsoft.ReportViewer.ProcessingObjectModel.dll
+D:\--Important-Docs--\prjct\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\Microsoft.ReportViewer.WebForms.dll
+D:\--Important-Docs--\prjct\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\Microsoft.Web.Infrastructure.dll
+D:\--Important-Docs--\prjct\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+D:\--Important-Docs--\prjct\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\Newtonsoft.Json.dll
+D:\--Important-Docs--\prjct\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\NHibernate.dll
+D:\--Important-Docs--\prjct\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\System.Web.Helpers.dll
+D:\--Important-Docs--\prjct\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\System.Web.Mvc.dll
+D:\--Important-Docs--\prjct\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\System.Web.Optimization.dll
+D:\--Important-Docs--\prjct\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\System.Web.Razor.dll
+D:\--Important-Docs--\prjct\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\System.Web.WebPages.Deployment.dll
+D:\--Important-Docs--\prjct\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\System.Web.WebPages.dll
+D:\--Important-Docs--\prjct\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\System.Web.WebPages.Razor.dll
+D:\--Important-Docs--\prjct\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\WebGrease.dll
+D:\--Important-Docs--\prjct\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\Xtensive.Orm.dll
+D:\--Important-Docs--\prjct\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\Xtensive.Orm.SqlServerCe.dll
+D:\--Important-Docs--\prjct\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\Antlr3.Runtime.pdb
+D:\--Important-Docs--\prjct\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\BCrypt.Net.pdb
+D:\--Important-Docs--\prjct\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\BCrypt.Net.xml
+D:\--Important-Docs--\prjct\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\FluentMigrator.pdb
+D:\--Important-Docs--\prjct\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\FluentMigrator.xml
+D:\--Important-Docs--\prjct\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\Iesi.Collections.xml
+D:\--Important-Docs--\prjct\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\JetBrains.Annotations.xml
+D:\--Important-Docs--\prjct\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\Newtonsoft.Json.xml
+D:\--Important-Docs--\prjct\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\NHibernate.xml
+D:\--Important-Docs--\prjct\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\System.Web.Optimization.xml
+D:\--Important-Docs--\prjct\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\System.Web.Razor.xml
+D:\--Important-Docs--\prjct\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\System.Web.Helpers.xml
+D:\--Important-Docs--\prjct\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\System.Web.Mvc.xml
+D:\--Important-Docs--\prjct\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\System.Web.WebPages.xml
+D:\--Important-Docs--\prjct\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\System.Web.WebPages.Deployment.xml
+D:\--Important-Docs--\prjct\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\System.Web.WebPages.Razor.xml
+D:\--Important-Docs--\prjct\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\Xtensive.Orm.xml
+D:\--Important-Docs--\prjct\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\Xtensive.Orm.SqlServerCe.xml
+D:\--Important-Docs--\prjct\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\obj\Debug\RdlCompile.cache
+D:\--Important-Docs--\prjct\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\obj\Debug\RdlCompile.compiled
+D:\--Important-Docs--\prjct\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\obj\Debug\ITSUPPORTTICKETSYSTEM.dll
+D:\--Important-Docs--\prjct\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\obj\Debug\ITSUPPORTTICKETSYSTEM.pdb
+D:\--Important-Docs--\prjct\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\DocumentFormat.OpenXml.dll
+D:\--Important-Docs--\prjct\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\ExporterObjects.dll
+D:\--Important-Docs--\prjct\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\iTextSharp.dll
+D:\--Important-Docs--\prjct\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\Westwind.RazorHosting.dll
+D:\--Important-Docs--\prjct\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\ExporterObjects.pdb
+D:\--Important-Docs--\prjct\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\bin\Westwind.RazorHosting.xml
+D:\--Important-Docs--\prjct\ITSUPPORTTICKETSYSTEM\ITSUPPORTTICKETSYSTEM\obj\Debug\ITSUPPORTTICKETSYSTEM.csprojResolveAssemblyReference.cache

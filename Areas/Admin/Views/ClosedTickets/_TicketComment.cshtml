@@ -1,0 +1,32 @@
+﻿@model ITSUPPORTTICKETSYSTEM.Models.Ticket
+<div id="content">
+    <header class="clearfix">
+        <div class="ticket-pagination  pull-right ">
+
+        </div>
+
+        <h1 class="page_title ">
+            <a href="@Url.Action("new")" class="btn btn-primary btn-sm"><i class="glyphicon glyphicon-plus"></i>Create new Ticket</a>
+        </h1>
+
+    </header>
+    <div class="content-inner">
+        <div class="row search-row">
+            <div class="col-md-12">
+                <div class="input-group">
+                    <input type="text" class="form-control search-field" placeholder="Search" />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-primary go">Go!</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="row comments-row">
+
+            <div class="well well-sm comments-well">
+                <b>@Html.Raw(Model.Content)  </b>
+
+            </div>
+        </div>
+    </div>
+</div>

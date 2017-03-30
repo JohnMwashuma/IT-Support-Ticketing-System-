@@ -1,0 +1,24 @@
+﻿@model IList<ITSUPPORTTICKETSYSTEM.Areas.Admin.ViewModels.DepartmentCheckbox>
+
+<div class="panel panel-info">
+    <div class="panel-heading">Departments</div>
+    <div class="panel-body">
+        <ul class="list-group">
+            @for (var i = 0; i < Model.Count; i++)
+            {
+                <li class="list-group-item">
+                    @Html.Hidden("Departments[" + i + "].Id", Model[i].Id)
+                    <label for="Departments_@(i)__IsChecked">
+                        @Html.CheckBox("Departments[" + i + "].IsChecked", Model[i].IsChecked)
+                        @Model[i].Name
+                    </label>
+                </li>
+
+            }
+
+        </ul>
+
+    </div>
+
+</div>
+

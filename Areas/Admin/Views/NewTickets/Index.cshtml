@@ -1,0 +1,155 @@
+﻿@model ITSUPPORTTICKETSYSTEM.Areas.Admin.ViewModels.NewTicketsIndex
+
+<div id="content">
+    <header class="clearfix">
+        <div class="ticket-pagination  pull-right ">
+            @if (Model.Tickets.HasPreviousPage)
+            {
+                <a href="@Url.Action("Index", new {page = Model.Tickets.PreviousPage})" class="btn btn-primary btn-sm">
+                    <i class="glyphicon glyphicon-chevron-left"></i> Previous Page
+                </a>
+            }
+            else
+            {
+                <a href="#" class="btn btn-default btn-disabled btn-sm">
+                    <i class="glyphicon glyphicon-chevron-left"></i> Previous Page
+                </a>
+            }
+            @if (Model.Tickets.HasNextPage)
+            {
+                <a href="@Url.Action("Index", new {page = Model.Tickets.NextPage})" class="btn btn-primary btn-sm">
+                    Next Page<i class="glyphicon glyphicon-chevron-right"></i>
+                </a>
+            }
+            else
+            {
+                <a href="#" class="btn btn-default btn-disabled btn-sm">
+                    Next Page <i class="glyphicon glyphicon-chevron-right"></i>
+                </a>
+            }
+        </div>
+
+        <h1 class="page_title ">
+            All New Tickets
+            @*<a href="@Url.Action("new")" class="btn btn-primary btn-sm"><i class="glyphicon glyphicon-plus"></i>Create new Ticket</a>*@
+        </h1>
+
+    </header>
+
+    <div class="content-inner">
+
+        @using (Html.BeginForm("Index", "NewTickets", FormMethod.Get))
+        {
+            <div class="row search-row">
+                <div class="col-md-12">
+                    <b>Search by: </b>@Html.RadioButton("searchBy", "Title")<text>Title</text>
+                    @Html.RadioButton("searchBy", "Username")<text>User Name</text><br />
+                    <div class="input-group">
+                        @Html.TextBox("search", null, new { @class = "form-control search-field", @placeholder = "Search", @type = "search" })
+                        @*<input type="search" class="form-control search-field" placeholder="Search"/>*@
+                        <span class="input-group-btn">
+                            <button type="submit" class="btn btn-primary go" value="Search">Go!</button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        }
+
+        <div class="pull-right export-to">
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary btn-sm">Export To</button>
+                <button type="button" class="btn btn-primary dropdown-toggle btn-sm" data-toggle="dropdown"><span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li>@Html.ActionLink("Excel", "ExportTo", new { ReportType = "Excel" })</li>
+                    <li>@Html.ActionLink("PDF", "ExportTo", new { ReportType = "PDF" })</li>
+                </ul>
+            </div>
+        </div>
+
+        <table class="table table-striped table-hover table-outer">
+            <thead>
+                <tr class="headings">
+                    <th class="column-title">Title</th>
+                    @if (User.IsInRole("admin") || User.IsInRole("support"))
+                    {
+                        <th class="column-title">Requester Name</th>
+                    }
+                    <th class="column-title">Incident Location</th>
+                    @*<th>Tags</th>*@
+                    @*<th>Comments</th>*@
+                    <th class="column-title">Ticket Status</th>
+                    <th class="column-title">Tickets Agency</th>
+                    @*<th>Date</th>*@
+                    <th class="column-title">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (!Model.Tickets.Any())
+                {
+                    <tr>
+                        <td colspan="5">
+                            No record found
+                        </td>
+                    </tr>
+                }
+                else
+                {
+                    foreach (var ticket in Model.Tickets)
+                    {
+                        var cls = "";
+                        if (ticket.IsDeleted)
+                        {
+                            cls = "danger";
+                        }
+                        <tr class="@cls">
+                            <td>@ticket.Title</td>
+                            @if (User.IsInRole("admin") || User.IsInRole("support"))
+                            {
+                                <td>@ticket.User.Username</td>
+                            }
+                            <td>@string.Join(",  ", ticket.User.Departments.Select(t => t.Name))</td>
+                            @*<td>@string.Join(",  ", ticket.Tags.Select(t => t.Name))</td>*@
+                            @*<td>@string.Join(",  ", ticket.Comments.Select(t=>t.Contents))</td>*@
+                            <td>@string.Join(",  ", ticket.Status.Select(t => t.Name))</td>
+                            <td>@string.Join(",  ", ticket.Priorities.Select(t => t.Name))</td>
+                            @*<td>@ticket.CreatedAt</td>*@
+
+                            <td>
+                                
+                                <a href="@Url.Action("edit", new {ticket.Id})" class="btn btn-xs btn-primary">
+                                    Reply<i class="glyphicon glyphicon-send"></i>
+                                </a>
+                                @if (!ticket.IsDeleted)
+                                {
+                                    if (User.IsInRole("client") )
+                                    {
+                                        <div class="btn-group btn-group-xs">
+                                            <a href="@Url.Action("trash", new {ticket.Id})" class="btn btn-danger" data-post="Are you sure you want to close this ticket? ">
+                                                <i class="glyphicon glyphicon-remove"></i> close ticket
+                                            </a>
+                                            <a href="#" class="btn btn-danger dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
+                                            <ul class="dropdown-menu">
+                                                <li>
+                                                    <a href="@Url.Action("delete", new {ticket.Id})" data-post="Are you sure you want to delete this ticket FOREVER?">
+                                                        <i class="glyphicon glyphicon-remove"></i> delete
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    }
+                                }
+                                else
+                                {
+                                    <a href="@Url.Action("restore", new {ticket.Id})" class="btn btn-xs btn-success" data-post="">
+                                        <i class="glyphicon glyphicon-plus-sign"></i>reopen
+                                    </a>
+                                }
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+
+    </div>
+</div>

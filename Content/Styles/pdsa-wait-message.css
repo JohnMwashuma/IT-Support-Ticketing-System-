@@ -1,0 +1,27 @@
+﻿/* ************************************ */
+/* BEGIN: Submit Message Display Styles */
+/* ************************************ */
+
+.submit-progress-bg {
+  background-color: lightgray;
+  opacity: .5;
+}
+
+.submit-progress {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  height: 6em;
+  padding-top: 2.3em;
+  z-index: 1;
+  /* The following properties are the ones most likely to change */
+  width: 20em;
+  /* Set 'margin-left' to a negative number that is 1/2 of 'width' */
+  margin-left: -10em;
+  padding-left: 2.1em;
+  background-color: black;
+  color: white;
+}
+/* ********************************** */
+/* END: Submit Message Display Styles */
+/* ********************************** */

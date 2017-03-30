@@ -1,0 +1,194 @@
+﻿@model ITSUPPORTTICKETSYSTEM.Areas.Admin.ViewModels.TicketsForm
+
+<div id="content">
+    <header>
+        <h1 class="page_title">@(Model.IsNew ? "Create Ticket" : "Update Ticket")</h1>
+    </header>
+    <div class="content-inner">
+        <div class="form-wrapper">
+            @using (Html.BeginForm("Form", "NewTickets"))
+            {
+                if (!Model.IsNew)
+                {
+                    @Html.HiddenFor(f => f.TicketId)
+
+                }
+
+                @Html.AntiForgeryToken()
+
+                <div class="row">
+                    <div class="col-lg-8">
+                        @Html.ValidationSummary()
+                        <div class="form-group">
+                            @Html.LabelFor(f => f.Title, new { @class = "sr-only" })
+                            @Html.TextBoxFor(f => f.Title, new { @class = "form-control", @placeholder = "Title", @id = "title" })
+                        </div>
+                        @*@if (Model.IsNew)
+                            {*@
+                        <div class="form-group">
+                            @Html.LabelFor(f => f.Slug, new { @class = "sr-only" })
+                            @Html.TextBoxFor(f => f.Slug, new { @class = "form-control", data_slug = "#title", @placeholder = "Slug", @name = "slug" })
+                        </div>
+                        @*}*@
+                        <div class="form-group">
+                            @Html.LabelFor(f => f.Content, new { @class = "sr-only" })
+                            @Html.TextAreaFor(f => f.Content, new { @class = "form-control summernote", @placeholder = "Content" })
+
+                        </div>
+                        @*@if (!Model.IsNew)
+                            {*@
+                        <div class="panel panel-info">
+                            <div class="panel-heading">Comments</div>
+                            <div class="panel-body ticket-comment-editor">
+                                <label for="new-comment-name" class="sr-only">New Comment:</label>
+                                <div class="input-group">
+                                    <input id="new-comment-name" type="text" class="new-comment-name form-control" placeholder="New Comment" />
+                                    <span class="input-group-btn">
+                                        <button disabled class="btn btn-primary add-comment-button">Add</button>
+                                    </span>
+                                </div>
+
+                                <ul class="comment-select">
+                                    <li class="template">
+                                        <a href="#" class="name"></a>
+
+                                        <input type="hidden" class="name-input" />
+                                        <input type="hidden" class="selected-input" />
+                                    </li>
+                                    @for (var i = 0; i < Model.Comments.Count; i++)
+                                    {
+                                        var comment = Model.Comments[i];
+                                        <li data-comment-id="@comment.Id" class="@(comment.IsChecked ? "selected" : "")">
+                                            <a href="#">@comment.Contents</a>
+
+                                            <input type="hidden" name="Comments[@(i)].Id" value="@comment.Id" />
+                                            <input type="hidden" name="Comments[@(i)].Contents" value="@comment.Contents" />
+                                            <input type="hidden" name="Comments[@(i)].IsChecked" value="@comment.IsChecked.ToString()" class="selected-input" />
+                                        </li>
+                                    }
+                                </ul>
+                            </div>
+                        </div>
+                        @*}*@
+
+                    </div>
+                    <div class="col-lg-4">
+
+                        <div class="panel panel-info">
+                            <div class="panel-heading">Ticket Priorities</div>
+                            <div class="panel-body ticket-priority-editor">
+                                @if (User.IsInRole("admin") || User.IsInRole("support"))
+                                {
+                                    <label for="new-priority-name" class="sr-only">New Priority:</label>
+                                    <div class="input-group">
+                                        <input id="new-priority-name" type="text" class="new-priority-name form-control" placeholder="New Priority" />
+                                        <span class="input-group-btn">
+                                            <button disabled class="btn btn-primary add-priority-button">Add</button>
+                                        </span>
+                                    </div>
+                                }
+                                <ul class="priority-select">
+                                    <li class="template">
+                                        <a href="#" class="name"></a>
+
+                                        <input type="hidden" class="name-input" />
+                                        <input type="hidden" class="selected-input" />
+                                    </li>
+                                    @for (var i = 0; i < Model.Priorities.Count; i++)
+                                    {
+                                        var priority = Model.Priorities[i];
+                                        <li data-tag-id="@priority.Id" class="@(priority.IsChecked ? "selected" : "")">
+                                            <a href="#">@priority.Name</a>
+
+                                            <input type="hidden" name="Priorities[@(i)].Id" value="@priority.Id" />
+                                            <input type="hidden" name="Priorities[@(i)].Name" value="@priority.Name" />
+                                            <input type="hidden" name="Priorities[@(i)].IsChecked" value="@priority.IsChecked.ToString()" class="selected-input" />
+                                        </li>
+                                    }
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-info">
+                            <div class="panel-heading">Tags</div>
+                            <div class="panel-body ticket-tag-editor">
+                                @if (User.IsInRole("admin") || User.IsInRole("support"))
+                                {
+                                    <label for="new-tag-name" class="sr-only">New Tag:</label>
+                                    <div class="input-group">
+                                        <input id="new-tag-name" type="text" class="new-tag-name form-control" placeholder="New Tag"/>
+                                        <span class="input-group-btn">
+                                            <button disabled class="btn btn-primary add-tag-button">Add</button>
+                                        </span>
+                                    </div>
+                                }
+                                <ul class="tag-select">
+                                    <li class="template">
+                                        <a href="#" class="name"></a>
+
+                                        <input type="hidden" class="name-input"/>
+                                        <input type="hidden" class="selected-input"/>
+                                    </li>
+                                    @for (var i = 0; i < Model.Tags.Count; i++)
+                                    {
+                                        var tag = Model.Tags[i];
+                                        <li data-tag-id="@tag.Id" class="@(tag.IsChecked ? "selected" : "")">
+                                            <a href="#">@tag.Name</a>
+
+                                            <input type="hidden" name="Tags[@(i)].Id" value="@tag.Id"/>
+                                            <input type="hidden" name="Tags[@(i)].Name" value="@tag.Name"/>
+                                            <input type="hidden" name="Tags[@(i)].IsChecked" value="@tag.IsChecked.ToString()" class="selected-input"/>
+                                        </li>
+                                    }
+                                </ul>
+                            </div>
+                        </div>
+
+
+                        <div class="panel panel-info">
+                            <div class="panel-heading">Ticket Status</div>
+                            <div class="panel-body">
+                                <ul class="list-group">
+                                    @for (var i = 0; i < Model.Status.Count; i++)
+                                    {
+                                        <li class="list-group-item">
+                                            @Html.Hidden("Status[" + i + "].Id", Model.Status[i].Id)
+                                            <label for="Status_@(i)__IsChecked">
+                                                @Html.CheckBox("Status[" + i + "].IsChecked", Model.Status[i].IsChecked)
+                                                @Model.Status[i].Name
+                                            </label>
+                                        </li>
+
+                                    }
+
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-info">
+                            <div class="panel-heading">Ticket Actions</div>
+                            <div class="panel-body">
+                                <input type="submit" value="@(Model.IsNew ? "Submit Ticket" : "Update Ticket")" class="btn btn-success btn-sm"/>
+                                <a href="@Url.Action("Index")">or cancel </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            }
+        </div>
+    </div>
+</div>
+
+
+@section Scripts
+{
+    @Scripts.Render("~/admin/ticket/scripts")
+    <script src="~/Scripts/summernote/dist/summernote.js"></script>
+    <script type="text/javascript">
+        $('.summernote').summernote({
+            height: 200
+        })
+    </script>
+}

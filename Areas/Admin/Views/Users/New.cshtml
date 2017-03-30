@@ -1,0 +1,55 @@
+﻿@model ITSUPPORTTICKETSYSTEM.Areas.Admin.ViewModels.UsersNew
+
+<div id="content">
+    <header class="clearfix">
+
+        <h1 class="page_title ">
+            New User
+        </h1>
+
+    </header>
+
+    <div class="content-inner">
+        <div class="form-wrapper">
+            @using (Html.BeginForm("New","Users", new {enctype="multipart/form-data"}))
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary()
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="form-group">
+                            @Html.LabelFor(f => f.Username, new {@class = "sr-only"})
+                            @Html.TextBoxFor(f => f.Username, new {@class = "form-control", @placeholder = "User Name"})
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(f => f.Email, new {@class = "sr-only"})
+                            @Html.TextBoxFor(f => f.Email, new {@class = "form-control", type = "email", @placeholder = "Email"})
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(f => f.Password, new {@class = "sr-only"})
+                            @Html.TextBoxFor(f => f.Password, new {@class = "form-control", type = "password", @placeholder = "Password"})
+                        </div>
+                        @Html.Partial("_DepartmentEditor", Model.Departments)
+
+                    </div>
+                    <div class="col-lg-4">
+
+                        @Html.LabelFor(m => m.ProfilePicture)
+                        @Html.TextBoxFor(m => m.ProfilePicture, new { type = "file" })
+
+                        @Html.Partial("_RoleEditor", Model.Roles)
+                        <div class="panel panel-info">
+                            <div class="panel-heading">User Actions</div>
+                            <div class="panel-body">
+                                <input type="submit" value="Create User" id="submitButton"class="btn btn-primary"/>
+                                <a href="@Url.Action("index")">or cancel</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

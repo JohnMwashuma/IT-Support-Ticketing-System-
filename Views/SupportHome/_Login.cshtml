@@ -1,0 +1,38 @@
+﻿@model ITSUPPORTTICKETSYSTEM.ViewModels.AuthLogin
+
+@{
+    ViewBag.Title = "ITSUPPORT";
+}
+
+@using (Html.BeginForm())
+{
+     @Html.ValidationSummary()
+        <fieldset>
+            <div class="control-group">
+                <div class="controls">
+                    @Html.TextBoxFor(x => x.Username, new { @class = "required special", @autofocus = "true", @placeholder = "Your user name", @size = "30", @type = "text", @autocomplete = "on" })
+                    @*<input class="required special" id="user_session_email" name="user_session[email]" autofocus="true" placeholder="Your user name" size="30" type="email" value="">*@
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="controls">
+                    @Html.TextBoxFor(x => x.Password, new { @class = "special", @autofocus = "true", @placeholder = "Password", @size = "30", @type = "password", @autocomplete = "off" })
+                    @*<input class="special" id="user_session_password" name="user_session[password]" placeholder="Password" size="30" type="password" autocomplete="off">*@
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="controls">
+                    <label class="checkbox">
+                        <input name="user_session[remember_me]" type="hidden" value="0"><input id="user_session_remember_me" name="user_session[remember_me]" type="checkbox" value="1">
+                        Remember me on this computer
+                    </label>
+                </div>
+            </div>
+            <div class="control-group">
+                <a href="" data-toggle-dom="#forgot-form, #login-form" id="forgot_password">forgot your password?</a>
+                <div class="controls">
+                    <button type="submit" class="btn btn-primary btn-login" value="Login"> Login </button>
+                </div>
+            </div>
+        </fieldset>
+}

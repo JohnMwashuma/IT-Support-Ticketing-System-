@@ -1,0 +1,64 @@
+﻿@model ITSUPPORTTICKETSYSTEM.Areas.Admin.ViewModels.TicketsIndex
+           @if (!Model.IsNew)
+                {
+                @Html.HiddenFor(f => f.TicketId)
+
+                }
+<div class="modal fade popup">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&close;</button>
+                <h4 class="modal-title">Modal title</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-wrapper">
+
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div class="form-group">
+                                @Html.LabelFor(f => f.Title, new {@class = "sr-only"})
+                                @Html.TextBoxFor(f => f.Title, new {@class = "form-control", @placeholder = "Title", @id = "title"})
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(f => f.Content, new {@class = "sr-only"})
+                                @Html.TextAreaFor(f => f.Content, new {@class = "form-control", @placeholder = "Content"})
+
+                            </div>
+                        </div>
+                        @*<div class="col-lg-4">
+
+                            <div class="panel panel-info">
+                                <div class="panel-heading">Ticket Status</div>
+                                <div class="panel-body">
+                                    <ul class="list-group">
+                                        @for (var i = 0; i < Model.Status.Count; i++)
+                                        {
+                                            <li class="list-group-item">
+                                                @Html.Hidden("Status[" + i + "].Id", Model.Status[i].Id)
+                                                <label for="Status_@(i)__IsChecked">
+                                                    @Html.CheckBox("Status[" + i + "].IsChecked", Model.Status[i].IsChecked)
+                                                    @Model.Status[i].Name
+                                                </label>
+                                            </li>
+
+                                        }
+
+                                    </ul>
+                                </div>
+                            </div>
+
+                        
+
+
+                        </div>*@
+                    </div>
+                    </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>

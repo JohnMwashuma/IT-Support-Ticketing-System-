@@ -1,0 +1,146 @@
+﻿@model ITSUPPORTTICKETSYSTEM.Areas.Admin.ViewModels.TicketCommentsIndex
+
+@*@Html.Partial("_TicketComments",Model.Tickets)*@
+<div id="content">
+    <header class="clearfix">
+        <div class="ticket-pagination  pull-right ">
+            @if (Model.Tickets.HasPreviousPage)
+            {
+                <a href="@Url.Action("Index", new {page = Model.Tickets.PreviousPage})" class="btn btn-primary btn-sm">
+                    <i class="glyphicon glyphicon-chevron-left"></i> Previous Page
+                </a>
+            }
+            else
+            {
+                <a href="#" class="btn btn-default btn-sm btn-disabled">
+                    <i class="glyphicon glyphicon-chevron-left"></i> Previous Page
+                </a>
+            }
+            @if (Model.Tickets.HasNextPage)
+            {
+                <a href="@Url.Action("Index", new {page = Model.Tickets.NextPage})" class="btn btn-primary btn-sm">
+                    Next Page<i class="glyphicon glyphicon-chevron-right"></i>
+                </a>
+            }
+            else
+            {
+                <a href="#" class="btn btn-default btn-disabled btn-sm">
+                    Next Page <i class="glyphicon glyphicon-chevron-right"></i>
+                </a>
+            }
+        </div>
+
+        <h1 class="page_title ">
+            <a href="@Url.Action("new")" class="btn btn-primary btn-sm"><i class="glyphicon glyphicon-plus"></i>Create new Ticket</a>
+        </h1>
+
+    </header>
+    <div class="content-inner">
+        <div class="row search-row">
+            <div class="col-md-12">
+                <div class="input-group">
+                    <input type="text" class="form-control search-field" placeholder="Search"/>
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-primary go">Go!</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="row comments-row">
+            @foreach (var ticket in Model.Tickets)
+            {
+                <div class="col-sm-2 col-md-1">
+                    <img class="img-circle commentprofile-img hidden-xs" src="@Url.Content(string.Format("~/Content/Images/{0}", Url.Encode(ticket.User.ProfilePicture)))" />
+              </div>
+                <div class="col-sm-10 col-md-11">
+                    <div class="row">
+                        <div class="col-xs-9 col-sm-10 col-md-9">
+                            <b>@ticket.User.Username </b> Sent a ticket on<b> <a href="@Url.RouteUrl("Ticket", new {ticket.Id, ticket.Slug})">@ticket.Title</a> </b><br/>
+                            <small>Ticket Received :</small><abbr class="timeago" title="@ticket.CreatedAt.ToString("o")"></abbr>
+                        </div>
+                        @foreach (var comment in ticket.Comments)
+                        {
+                            <div class="col-xs-3 col-sm-2 col-md-3">
+                                <div class="clearfix">
+                                    <div class="pull-right comment-age"><small>Comment Posted : </small><abbr class="timeago" title="@comment.CreatedAt.ToString("o")"></abbr>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+
+                    <div class="well well-sm comments-well">
+                        @foreach (var comment in ticket.Comments)
+                        {
+
+                            <b> @string.Join(",  ", ticket.Comments.Select(t => t.User.Username)) </b>@comment.Contents
+                        }
+                    </div>
+
+                    <div class="clearfix ticketcomments-row">
+                        <a href="@Url.Action("edit", new {ticket.Id})" class="btn btn-xs btn-primary">
+                            Reply<i class="glyphicon glyphicon-send"></i>
+                        </a>
+                        <div class="pull-right">
+
+                            @foreach (var tag in ticket.Tags)
+                            {
+
+                                <a class="badge" href="@Url.RouteUrl("Tag", new {tag.Id, tag.Slug})">@tag.Name</a>
+
+                            }
+                        </div>
+
+
+
+                    </div>
+                </div>
+            }
+        </div>
+
+        @*<div class="row comments-row">
+                <div class="col-sm-2 col-md-1">
+                    <img class="img-circle hidden-xs" src="~/Content/Images/AdobePhotoshopExpress_0b6399aa497e48de9eaf12ef9c9007dd.jpg" />
+                </div>
+                <div class="col-sm-10 col-md-11">
+                    <div class="row">
+                        <div class="col-xs-9 col-sm-10 col-md-9">
+                            <b>Clemence Chambela</b> Posted message on<b> How things work...</b><br />
+                            <small>Today 2:02 pm - 03/12/2015 </small>
+                        </div>
+                        <div class="col-xs-3 col-sm-2 col-md-3">
+                            <div class="clearfix">
+                                <div class="pull-right comment-age">2 days ago</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="well well-sm comments-well">
+                        This sssjhsh shjdhhd sajsjskjs sjjshjsna jshshhs ajhjshjs shshhshj ahhshsjs
+                        shgshhsn shjdhjjhsjnsa shjjshsh sjsjjkjhd ajshhshshls ssjsjhsdhhsjhs. This sssjhsh shjdhhd sajsjskjs
+                        sjjshjsna jshshhs ajhjshjs shshhshj ahhshsjs shgshhsn shjdhjjhsjnsa shjjshsh sjsjjkjhd ajshhshshls
+                        ssjsjhsdhhsjhs.
+                    </div>
+                    <div class="clearfix">
+                        <div class="pull-right">
+                            <a class="btn btn-xs btn-default" href="#" role="button">
+                                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                                Delete
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>*@
+
+    </div>
+</div>
+@section Scripts
+{
+    @Scripts.Render("~/admin/scripts")
+    <script src="~/Areas/Admin/Scripts/jquery.timeago.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            jQuery(".timeago").timeago();
+        });
+    </script>
+}
